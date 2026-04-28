@@ -6,7 +6,7 @@
 
 ## Tech Stack
 
-- **Framework:** Next.js 15.4.4 (App Router)
+- **Framework:** Next.js 16.2.4 (App Router)
 - **Language:** TypeScript 5.x (strict mode)
 - **UI:** React 19.1.0 + Tailwind CSS 4.x
 - **State:** Client-side state (useState, useCallback, useMemo)

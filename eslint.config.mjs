@@ -1,16 +1,16 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-import { FlatCompat } from '@eslint/eslintrc'
+import coreWebVitals from 'eslint-config-next/core-web-vitals'
+import typescript from 'eslint-config-next/typescript'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
-
+/** @type {import('eslint').Linter.Config[]} */
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...coreWebVitals,
+  ...typescript,
+  {
+    rules: {
+      // react-hooks v7: 기존 폼·모달 동기화 패턴과 충돌하므로 비활성화
+      'react-hooks/set-state-in-effect': 'off',
+    },
+  },
 ]
 
 export default eslintConfig
